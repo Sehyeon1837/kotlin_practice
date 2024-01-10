@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:hint="Username" />
 
     <EditText
@@ -43,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:inputType="textPassword"
         android:hint="Password"/>
 
@@ -97,6 +97,5 @@
             android:text="Create" />
 
     </LinearLayout>
-
 
 </LinearLayout>

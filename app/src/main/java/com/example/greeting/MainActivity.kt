@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
             }
         }
 
-        setContentView(R.layout.mainlogin)
+        setContentView(R.layout.create_account)
     }
 }
 
