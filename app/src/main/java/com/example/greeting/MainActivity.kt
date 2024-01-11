@@ -9,51 +9,28 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.greeting.adapter.LocationAdapter
+import com.example.greeting.data.Location
+import com.example.greeting.data.createRealJejuLocationData
 import com.example.greeting.ui.theme.GreetingTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-/*        setContent {
-            GreetingTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Kotlin")
-                }
-            }
-        }*/
+        setContentView(R.layout.recylce_exam)
 
-        setContentView(R.layout.first_activity)
-        val sendButton = findViewById<Button>(R.id.btn_startActivity)
+        //recyclerview 인스턴스 가져오기
+        val recyclerView: RecyclerView = findViewById(R.id.recyclerView2)
 
-        sendButton.setOnClickListener{
-            val sendText = findViewById<EditText>(R.id.sendPlainText)
-            val sendMessage = sendText.text.toString()
+        //layoutmanager 설정
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
-            val sendIntent = Intent(this, SubActivity::class.java)
-            sendIntent.putExtra("message", sendMessage)
-
-            startActivity(sendIntent)
-
-        }
+        //adapter 설정
+        val locationAdapter = LocationAdapter(sampleLocation)
+        recyclerView.adapter = locationAdapter
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    GreetingTheme {
-        Greeting("Kotlin")
-    }
-}
+val sampleLocation = createRealJejuLocationData()

@@ -10,6 +10,7 @@ data class Location (
 
 fun createRealJejuLocationData(): List<Location> {
     val jejuLocations = listOf(
+        Location(0, "넥슨컴퓨터박물관", 33.47177, 126.48499, System.currentTimeMillis()),
         Location(1,"제주국제공항", 33.51135, 126.49277, System.currentTimeMillis()),
         Location(2, "한라산", 33.36250, 126.53369, System.currentTimeMillis()),
         Location(3, "성산일출봉", 33.45804, 126.94260, System.currentTimeMillis()),
